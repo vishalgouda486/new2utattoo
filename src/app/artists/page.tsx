@@ -678,7 +678,7 @@ export default function ArtistsPage() {
                       {/* CTA */}
                       <div className="mt-8 flex flex-col flex-wrap gap-3 sm:flex-row sm:gap-4">
                         <a
-                          href={`https://wa.me/917624815112?text=${encodeURIComponent(
+                          href={`https://wa.me/919916173301?text=${encodeURIComponent(
                             `Hi NEW 2 U Tattoo Studio, I want to book with ${activeArtist.name}.`
                           )}`}
                           target="_blank"

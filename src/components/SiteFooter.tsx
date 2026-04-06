@@ -20,9 +20,9 @@ const infoTiles = [
   },
   {
     title: "Contact",
-    value: "+91 76248 15112",
+    value: "+91 99161 73301",
     icon: "📞",
-    href: "tel:+917624815112",
+    href: "tel:+919916173301",
   },
   {
     title: "Mail",
@@ -203,7 +203,7 @@ export default function SiteFooter() {
         {/* Brandzo Bottom CTA */}
         <div className="mt-6 border-t border-white/10 pt-5 text-center">
           <a
-            href="https://wa.me/917624815112?text=Hi%20Brandzo%20Hub%2C%20I%20want%20a%20premium%20website%20for%20my%20business."
+            href="https://wa.me/919916173301?text=Hi%20Brandzo%20Hub%2C%20I%20want%20a%20premium%20website%20for%20my%20business."
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex flex-wrap items-center justify-center gap-2 text-[11px] uppercase tracking-[0.22em] text-zinc-500 transition-all duration-300 hover:text-white"

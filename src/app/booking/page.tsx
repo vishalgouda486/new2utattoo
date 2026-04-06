@@ -199,7 +199,7 @@ IDEA / NOTES
 ${form.idea || "No extra details provided."}`;
 
     window.open(
-      `https://wa.me/917624815112?text=${encodeURIComponent(message)}`,
+      `https://wa.me/919916173301?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };
@@ -236,7 +236,7 @@ ${form.idea || "No extra details provided."}`;
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="https://wa.me/917624815112?text=Hi%20NEW%202%20U%20Tattoo%20Studio%2C%20I%20want%20to%20book%20a%20consultation."
+              href="https://wa.me/919916173301?text=Hi%20NEW%202%20U%20Tattoo%20Studio%2C%20I%20want%20to%20book%20a%20consultation."
               target="_blank"
               rel="noopener noreferrer"
               className="magnetic-btn inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-black transition hover:scale-105"
@@ -622,7 +622,7 @@ ${form.idea || "No extra details provided."}`;
 
             <div className="mt-8">
               <a
-                href="https://wa.me/917624815112?text=Hi%20NEW%202%20U%20Tattoo%20Studio%2C%20I%20need%20help%20before%20booking."
+                href="https://wa.me/919916173301?text=Hi%20NEW%202%20U%20Tattoo%20Studio%2C%20I%20need%20help%20before%20booking."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="magnetic-btn inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-black transition hover:scale-105"

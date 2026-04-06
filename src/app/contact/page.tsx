@@ -114,7 +114,7 @@ export default function ContactPage() {
                 className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
               >
                 <a
-                  href="https://wa.me/917624815112?text=Hi%20NEW%202%20U%20Tattoo%20Studio%2C%20I%20want%20to%20enquire."
+                  href="https://wa.me/919916173301?text=Hi%20NEW%202%20U%20Tattoo%20Studio%2C%20I%20want%20to%20enquire."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="magnetic-btn premium-btn inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 sm:px-8 py-4 text-[11px] sm:text-sm font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-black hover:bg-[var(--primary)]"
@@ -230,7 +230,7 @@ export default function ContactPage() {
 
               <div className="mt-8">
                 <a
-                  href="https://wa.me/917624815112?text=Hi%20NEW%202%20U%20Tattoo%20Studio%2C%20I%20want%20to%20book%20a%20consultation."
+                  href="https://wa.me/919916173301?text=Hi%20NEW%202%20U%20Tattoo%20Studio%2C%20I%20want%20to%20book%20a%20consultation."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="magnetic-btn inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-[11px] sm:text-sm font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-black transition hover:scale-105"

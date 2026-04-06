@@ -96,7 +96,7 @@ export default function RootLayout({
     name: "NEW 2 U Tattoo Studio",
     image: "https://yourdomain.com/og-image.jpg",
     url: "https://yourdomain.com",
-    telephone: "+91 76248 15112",
+    telephone: "+91 99161 73301",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Belagavi",
@@ -109,7 +109,7 @@ export default function RootLayout({
     priceRange: "₹₹",
     sameAs: [
       "https://instagram.com/yourhandle",
-      "https://wa.me/917624815112",
+      "https://wa.me/919916173301",
     ],
   };
 

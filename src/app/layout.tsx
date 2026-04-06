@@ -14,7 +14,7 @@ const syncopate = Syncopate({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://new2utattoo.com"),
   title: {
     default: "Best Tattoo Studio in Belagavi | NEW 2 U Tattoo Studio",
     template: "%s | NEW 2 U Tattoo Studio",
@@ -52,17 +52,17 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: "https://new2utattoo.com",
   },
   openGraph: {
     title: "Best Tattoo Studio in Belagavi | NEW 2 U Tattoo Studio",
     description:
       "Premium tattoo and piercing studio in Belagavi for realism, portraits, custom concepts, fine line tattoos, tribal tattoos, geometric tattoos, and luxury body art experiences.",
-    url: "https://yourdomain.com",
+    url: "https://new2utattoo.com",
     siteName: "NEW 2 U Tattoo Studio",
     images: [
       {
-        url: "https://yourdomain.com/og-image.jpg",
+        url: "https://new2utattoo.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "NEW 2 U Tattoo Studio in Belagavi",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "Best Tattoo Studio in Belagavi | NEW 2 U Tattoo Studio",
     description:
       "Luxury tattoo and piercing experience in Belagavi. Realism, portraits, fine line, tribal, geometric, and custom tattoos.",
-    images: ["https://yourdomain.com/og-image.jpg"],
+    images: ["https://new2utattoo.com/og-image.jpg"],
   },
   category: "Tattoo Studio",
 };
@@ -94,8 +94,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "TattooParlor",
     name: "NEW 2 U Tattoo Studio",
-    image: "https://yourdomain.com/og-image.jpg",
-    url: "https://yourdomain.com",
+    image: "https://new2utattoo.com/og-image.jpg",
+    url: "https://new2utattoo.com",
     telephone: "+91 99161 73301",
     address: {
       "@type": "PostalAddress",
@@ -108,7 +108,7 @@ export default function RootLayout({
       "Premium tattoo and piercing studio in Belagavi specializing in realism, portraits, tribal, geometric, minimal, and custom tattoos.",
     priceRange: "₹₹",
     sameAs: [
-      "https://instagram.com/yourhandle",
+      "https://instagram.com/new_2_u_tattoomaker",
       "https://wa.me/919916173301",
     ],
   };
@@ -117,10 +117,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "NEW 2 U Tattoo Studio",
-    url: "https://yourdomain.com",
+    url: "https://new2utattoo.com",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://yourdomain.com/search?q={search_term_string}",
+      target: "https://new2utattoo.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };

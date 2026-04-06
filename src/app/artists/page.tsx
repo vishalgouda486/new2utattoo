@@ -311,19 +311,67 @@ export default function ArtistsPage() {
     );
 
     if (touchCheck) {
-      const mobileItems = gsap.utils.toArray<HTMLElement>(".mobile-scroll-reveal");
-
-      mobileItems.forEach((el) => {
-        ScrollTrigger.create({
-          trigger: el,
-          start: "center 70%",
-          end: "center 30%",
-          onEnter: () => el.classList.add("is-active"),
-          onEnterBack: () => el.classList.add("is-active"),
-          onLeave: () => el.classList.remove("is-active"),
-          onLeaveBack: () => el.classList.remove("is-active"),
+      const createMobileScrollTriggers = () => {
+        ScrollTrigger.getAll().forEach((trigger) => {
+          const triggerEl = trigger.vars.trigger as HTMLElement | undefined;
+          if (
+            triggerEl &&
+            triggerEl.classList &&
+            triggerEl.classList.contains("mobile-scroll-reveal")
+          ) {
+            trigger.kill();
+          }
         });
+
+        const mobileItems = gsap.utils.toArray<HTMLElement>(".mobile-scroll-reveal");
+
+        mobileItems.forEach((el) => {
+          ScrollTrigger.create({
+            trigger: el,
+            start: "top 70%",
+            end: "bottom 30%",
+            onEnter: () => el.classList.add("is-active"),
+            onEnterBack: () => el.classList.add("is-active"),
+            onLeave: () => el.classList.remove("is-active"),
+            onLeaveBack: () => el.classList.remove("is-active"),
+          });
+        });
+
+        ScrollTrigger.refresh();
+      };
+
+      createMobileScrollTriggers();
+
+      const popupObserver = new MutationObserver(() => {
+        createMobileScrollTriggers();
       });
+
+      popupObserver.observe(document.body, { childList: true, subtree: true });
+
+      const observer = new MutationObserver(() => {
+        elements.forEach((el) => {
+          el.removeEventListener("mouseenter", addHover);
+          el.removeEventListener("mouseleave", removeHover);
+        });
+        elements = bindHoverEvents();
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+
+      return () => {
+        if (!touchCheck) {
+          document.removeEventListener("mousemove", move);
+        }
+
+        elements.forEach((el) => {
+          el.removeEventListener("mouseenter", addHover);
+          el.removeEventListener("mouseleave", removeHover);
+        });
+
+        popupObserver.disconnect();
+        observer.disconnect();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
     }
 
     const observer = new MutationObserver(() => {

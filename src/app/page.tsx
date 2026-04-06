@@ -663,7 +663,7 @@ export default function Home() {
             </div>
 
             <div ref={heroWrapRef} className="relative hero-image-glow">
-              <div className="relative mx-auto h-[540px] sm:h-[680px] w-full max-w-[680px]">
+              <div className="relative mx-auto h-[300px] sm:h-[680px] w-full max-w-[680px] md:h-[540px]">
                 <div className="absolute left-[50%] top-[50%] h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[130px]" />
 
                 {/* DESKTOP ONLY - UNCHANGED */}
@@ -787,7 +787,7 @@ export default function Home() {
                 Why Clients Choose NEW 2 U
               </p>
 
-              <h2 className="mt-4 sm:mt-5 font-sync text-[2rem] uppercase leading-tight sm:text-5xl typing-text min-h-[108px] sm:min-h-[150px]">
+              <h2 className="mt-4 sm:mt-5 font-sync text-[2rem] uppercase leading-tight sm:text-5xl typing-text min-h-[78px] sm:min-h-[150px]">
                 A Tattoo Studio Built For
                 <span className="gradient-text block">Confidence, Art & Trust</span>
               </h2>

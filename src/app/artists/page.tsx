@@ -54,7 +54,6 @@ const artists = [
       { type: "image", src: "/artists/snehal/1.jpg" },
       { type: "image", src: "/artists/snehal/2.jpg" },
       { type: "image", src: "/artists/snehal/3.jpg" },
-      { type: "image", src: "/artists/snehal/4.jpg" },
       { type: "image", src: "/artists/snehal/5.jpg" },
       { type: "image", src: "/artists/snehal/6.jpg" },
       { type: "image", src: "/artists/snehal/7.jpg" },
@@ -216,7 +215,7 @@ function WorkMediaCard({
         <img
           src={item.src}
           alt="Tattoo work"
-          className="mobile-scroll-reveal mobile-image-fx block w-full grayscale transition duration-700 ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
+          className="mobile-scroll-reveal popup-media-color mobile-image-fx block w-full md:grayscale transition duration-700 ease-out group-hover:scale-[1.03] md:group-hover:grayscale-0"
           loading="lazy"
         />
       ) : (
@@ -228,7 +227,7 @@ function WorkMediaCard({
             loop
             playsInline
             autoPlay={isTouch}
-            className="mobile-scroll-reveal mobile-video-fx block w-full grayscale transition duration-700 ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
+            className="mobile-scroll-reveal popup-media-color mobile-video-fx block w-full md:grayscale transition duration-700 ease-out group-hover:scale-[1.03] md:group-hover:grayscale-0"
           />
           {!isTouch && (
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
@@ -311,67 +310,19 @@ export default function ArtistsPage() {
     );
 
     if (touchCheck) {
-      const createMobileScrollTriggers = () => {
-        ScrollTrigger.getAll().forEach((trigger) => {
-          const triggerEl = trigger.vars.trigger as HTMLElement | undefined;
-          if (
-            triggerEl &&
-            triggerEl.classList &&
-            triggerEl.classList.contains("mobile-scroll-reveal")
-          ) {
-            trigger.kill();
-          }
+      const mobileItems = gsap.utils.toArray<HTMLElement>(".mobile-scroll-reveal");
+
+      mobileItems.forEach((el) => {
+        ScrollTrigger.create({
+          trigger: el,
+          start: "center 70%",
+          end: "center 30%",
+          onEnter: () => el.classList.add("is-active"),
+          onEnterBack: () => el.classList.add("is-active"),
+          onLeave: () => el.classList.remove("is-active"),
+          onLeaveBack: () => el.classList.remove("is-active"),
         });
-
-        const mobileItems = gsap.utils.toArray<HTMLElement>(".mobile-scroll-reveal");
-
-        mobileItems.forEach((el) => {
-          ScrollTrigger.create({
-            trigger: el,
-            start: "top 70%",
-            end: "bottom 30%",
-            onEnter: () => el.classList.add("is-active"),
-            onEnterBack: () => el.classList.add("is-active"),
-            onLeave: () => el.classList.remove("is-active"),
-            onLeaveBack: () => el.classList.remove("is-active"),
-          });
-        });
-
-        ScrollTrigger.refresh();
-      };
-
-      createMobileScrollTriggers();
-
-      const popupObserver = new MutationObserver(() => {
-        createMobileScrollTriggers();
       });
-
-      popupObserver.observe(document.body, { childList: true, subtree: true });
-
-      const observer = new MutationObserver(() => {
-        elements.forEach((el) => {
-          el.removeEventListener("mouseenter", addHover);
-          el.removeEventListener("mouseleave", removeHover);
-        });
-        elements = bindHoverEvents();
-      });
-
-      observer.observe(document.body, { childList: true, subtree: true });
-
-      return () => {
-        if (!touchCheck) {
-          document.removeEventListener("mousemove", move);
-        }
-
-        elements.forEach((el) => {
-          el.removeEventListener("mouseenter", addHover);
-          el.removeEventListener("mouseleave", removeHover);
-        });
-
-        popupObserver.disconnect();
-        observer.disconnect();
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      };
     }
 
     const observer = new MutationObserver(() => {
@@ -421,7 +372,6 @@ export default function ArtistsPage() {
         <div className="absolute bottom-10 right-10 h-[260px] w-[260px] rounded-full bg-violet-500/10 blur-[130px]" />
       </div>
 
-      {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,255,214,0.08),transparent_35%)]" />
         <div className="container-premium relative z-10 py-14 md:py-24">
@@ -456,7 +406,6 @@ export default function ArtistsPage() {
         </div>
       </section>
 
-      {/* ARTIST GRID */}
       <section className="section-spacing">
         <div className="container-premium">
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
@@ -522,7 +471,6 @@ export default function ArtistsPage() {
         </div>
       </section>
 
-      {/* WHY ARTIST MATTERS */}
       <section className="section-spacing bg-white/[0.02]">
         <div className="container-premium grid items-center gap-10 md:gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
@@ -592,7 +540,6 @@ export default function ArtistsPage() {
         </div>
       </section>
 
-      {/* POPUP MODAL */}
       <AnimatePresence>
         {activeArtist && (
           <motion.div
@@ -620,7 +567,6 @@ export default function ArtistsPage() {
                   className="mt-4 overflow-hidden rounded-[2rem] border border-white/10 bg-black/70 backdrop-blur-2xl"
                 >
                   <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
-                    {/* LEFT IMAGE */}
                     <div className="popup-image-hover group relative min-h-[320px] overflow-hidden sm:min-h-[520px]">
                       <div
                         className="absolute inset-0 bg-cover bg-center grayscale-0 scale-100 transition-all duration-700 ease-out md:grayscale md:group-hover:scale-105 md:group-hover:grayscale-0"
@@ -645,7 +591,6 @@ export default function ArtistsPage() {
                       </div>
                     </div>
 
-                    {/* RIGHT CONTENT */}
                     <div className="p-5 sm:p-8 md:p-10">
                       <div className="flex flex-wrap gap-3">
                         <div className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[9px] uppercase tracking-[0.28em] text-zinc-300 sm:text-[10px] sm:tracking-[0.35em]">
@@ -666,7 +611,6 @@ export default function ArtistsPage() {
                         {activeArtist.desc}
                       </p>
 
-                      {/* STAT CARDS */}
                       <div className="mt-8 grid gap-4 sm:grid-cols-2">
                         {[
                           {
@@ -696,7 +640,6 @@ export default function ArtistsPage() {
                         })}
                       </div>
 
-                      {/* SPECIALTY TAGS */}
                       <div className="mt-8">
                         <p className="text-[9px] uppercase tracking-[0.28em] text-zinc-500 sm:text-[10px] sm:tracking-[0.35em]">
                           Expertise
@@ -713,7 +656,6 @@ export default function ArtistsPage() {
                         </div>
                       </div>
 
-                      {/* BEST FOR */}
                       <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                         <p className="text-[9px] uppercase tracking-[0.28em] text-zinc-500 sm:text-[10px] sm:tracking-[0.35em]">
                           Best For
@@ -723,7 +665,6 @@ export default function ArtistsPage() {
                         </p>
                       </div>
 
-                      {/* CTA */}
                       <div className="mt-8 flex flex-col flex-wrap gap-3 sm:flex-row sm:gap-4">
                         <a
                           href={`https://wa.me/919916173301?text=${encodeURIComponent(
@@ -746,7 +687,6 @@ export default function ArtistsPage() {
                     </div>
                   </div>
 
-                  {/* WORK GRID */}
                   <div className="border-t border-white/10 p-5 sm:p-8 md:p-10">
                     <div className="mb-6 flex items-center justify-between gap-4">
                       <div>

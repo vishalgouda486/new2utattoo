@@ -463,3 +463,13 @@ body {
 .tilt-inner {
   transform: translateZ(60px);
 }
+
+@media (max-width: 768px) {
+  .popup-media-color.mobile-scroll-reveal,
+  .popup-media-color.mobile-scroll-reveal.is-active {
+    filter: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+  }
+}

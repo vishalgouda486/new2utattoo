@@ -14,7 +14,7 @@ export default function FloatingWhatsApp() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       whileHover={{ scale: 1.04, y: -3 }}
       whileTap={{ scale: 0.96 }}
-      className="group fixed bottom-5 right-4 md:bottom-6 md:right-6 z-[1200] flex items-center gap-3 rounded-full border border-white/10 bg-black/65 px-3.5 py-3 md:px-4 md:py-3 backdrop-blur-xl shadow-[0_16px_40px_rgba(0,0,0,0.35)] transition-all duration-300"
+      className="group fixed bottom-30 right-4 md:bottom-6 md:right-6 z-[1200] flex items-center gap-3 rounded-full border border-white/10 bg-black/65 px-3.5 py-3 md:px-4 md:py-3 backdrop-blur-xl shadow-[0_16px_40px_rgba(0,0,0,0.35)] transition-all duration-300"
     >
       {/* subtle premium edge glow */}
       <span className="pointer-events-none absolute inset-0 rounded-full border border-[#25D366]/30 opacity-70" />

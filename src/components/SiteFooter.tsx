@@ -26,9 +26,9 @@ const infoTiles = [
   },
   {
     title: "Mail",
-    value: "contact@new2utattoo.com",
+    value: "new2ubgm9@gmail.com",
     icon: "✉️",
-    mailto: "contact@new2utattoo.com?subject=Tattoo%20Booking%20Enquiry",
+    mailto: "new2ubgm9@gmail.com?subject=Tattoo%20Booking%20Enquiry",
   },
 ];
 

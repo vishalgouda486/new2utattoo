@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "NEW 2 U Tattoo Studio is a premium tattoo and piercing studio in Belagavi, Karnataka, specializing in realism tattoos, portrait tattoos, custom tattoos, fine line tattoos, tribal tattoos, geometric tattoos, body art, and premium tattoo experiences.",
   keywords: [
     "tattoo studio in Belagavi",
+    "new2u",
+    "new2u tattoo",
+    "tattoo in belagavi",
     "best tattoo studio in Belagavi",
     "best tattoo artist in Belagavi",
     "premium tattoo studio Belagavi",

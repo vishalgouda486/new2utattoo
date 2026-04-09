@@ -473,3 +473,40 @@ body {
     box-shadow: none !important;
   }
 }
+
+/* ===== PORTFOLIO MOBILE SCROLL FIX + IMAGE POPUP ===== */
+
+.zoomable-media {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .mobile-scroll-reveal {
+    filter: grayscale(1) saturate(0.72) brightness(0.52) contrast(1.02);
+    transform: scale(0.985);
+    opacity: 0.94;
+    box-shadow: none;
+    will-change: transform, filter, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .mobile-scroll-reveal.is-active {
+    filter: grayscale(0) saturate(1.08) brightness(1) contrast(1.02);
+    transform: scale(1.055);
+    opacity: 1;
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.28),
+      0 0 34px rgba(142, 247, 231, 0.1);
+  }
+
+  /* popup image should stay fully normal */
+  .popup-media-color.mobile-scroll-reveal,
+  .popup-media-color.mobile-scroll-reveal.is-active,
+  .popup-media-color {
+    filter: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+  }
+}

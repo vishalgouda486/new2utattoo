@@ -148,6 +148,20 @@ export default function RootLayout({
         `}
       </Script>
 
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-LPD0X7JXRL"
+        strategy="afterInteractive"
+      />
+
+      <Script strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LPD0X7JXRL');
+        `}
+      </Script>
+
       <body className={`${inter.variable} ${syncopate.variable} antialiased bg-black text-white`}>
         
         <script
